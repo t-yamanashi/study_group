@@ -14,15 +14,10 @@ defmodule Issues.CLI do
     |> args_to_internal_representiation()
   end
 
-  def args_to_internal_representiation([user, project, count]) do
-    {user, project, String.to_integer(count)}
-  end
+  def args_to_internal_representiation([user, project, count]),
+    do: {user, project, String.to_integer(count)}
 
-  def args_to_internal_representiation([user, project]) do
-    {user, project, @default_count}
-  end
+  def args_to_internal_representiation([user, project]), do: {user, project, @default_count}
 
-  def args_to_internal_representiation(_) do
-    :help
-  end
+  def args_to_internal_representiation(_), do: :help
 end
